@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Grid, Responsive, Segment } from ‘semantic-ui-react’;
+import styled from 'styled-components'
 
 const PostCardDiv = styled.div`
     display: flex;
@@ -10,11 +10,11 @@ const PostCardDiv = styled.div`
 
 
 
-export default function PostCard({ date, title }) {
+export default function PostCard({ title, text }) {
     return(
         <PostCardDiv>
-            <h3>{date}</h3>
             <h2>{title}</h2>
+            <p>{text}</p>
         </PostCardDiv>
 
     )
