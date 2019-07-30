@@ -19,10 +19,10 @@ export default function JournalEntries(props) {
 		<div>
 			{entries.map(entry => {
 				return (
-					<>
+					<div className="journal-entry" key={entry.id}>
 						<h2>{entry.title}</h2>
 						<p>{entry.text}</p>
-					</>
+					</div>
 				)
 			})}
 		</div>
