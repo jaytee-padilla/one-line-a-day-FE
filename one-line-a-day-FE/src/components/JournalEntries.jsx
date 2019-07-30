@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 
-export default function ProtectedPage(props) {
+export default function JournalEntries(props) {
 	// populates page with initial journal entries upon loading
 	useEffect(() => {
 		axiosWithAuth().get("https://one-line-daily.herokuapp.com/api/entries")

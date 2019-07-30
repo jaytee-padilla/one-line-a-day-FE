@@ -17,7 +17,7 @@ export default function Login(props) {
 		.then(response => {
 			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('user_id', response.data.user.id);
-			props.history.push("/protectedpage");
+			props.history.push("/home");
 		})
 		.catch(error => console.log(error))
 	};

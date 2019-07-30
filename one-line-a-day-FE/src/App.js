@@ -6,14 +6,14 @@ import './App.css';
 // components
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import ProtectedPage from './components/ProtectedPage';
+import JournalEntries from './components/JournalEntries';
 
 function App() {
 	return (
     <div className="App">
 			<Route exact path="/" render={props => <Login {...props} />} />
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
-			<PrivateRoute path="/protectedpage" component={ProtectedPage} />
+			<PrivateRoute path="/home" component={JournalEntries} />
     </div>
   );
 }
