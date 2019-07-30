@@ -1,16 +1,19 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 import './App.css';
 
 // components
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import ProtectedPage from './ProtectedPage';
 
 function App() {
 	return (
     <div className="App">
-			<Route exact path="/" component={Login} />
-			<Route exact path="/signup" component={SignUp} />
+			<Route exact path="/" render={props => <Login {...props} />} />
+			<Route exact path="/signup" render={props => <SignUp {...props} />} />
+			<PrivateRoute path="/protectedpage" component={ProtectedPage} />
     </div>
   );
 }
