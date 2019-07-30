@@ -13,5 +13,16 @@ export default function WillBeReplacedByJulieFile() {
                 setEntry(response.data.data)
             })
             .catch(error => console.log(error))
-    })
+    }, []);
+
+    return (
+        <div>
+            {entry.map(ent => {
+                return (
+                    <h2>{ent.title}</h2>
+                    <h2>{ent.text}</h2>
+                )
+            })}
+        </div>
+    )
 }
