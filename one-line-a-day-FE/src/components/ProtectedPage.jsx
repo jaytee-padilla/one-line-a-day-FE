@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from './axiosWithAuth';
+import { axiosWithAuth } from '../auth/axiosWithAuth';
 
 export default function ProtectedPage(props) {
 	// populates page with initial journal entries upon loading
@@ -12,6 +12,7 @@ export default function ProtectedPage(props) {
 			.catch(error => console.log(error))
 	}, []);
 
+	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
 	const [entries, setEntries] = useState([]);
 
 	return (

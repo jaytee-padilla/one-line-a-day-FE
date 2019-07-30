@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './auth/PrivateRoute';
 import './App.css';
 
 // components
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import ProtectedPage from './ProtectedPage';
+import ProtectedPage from './components/ProtectedPage';
 
 function App() {
 	return (
