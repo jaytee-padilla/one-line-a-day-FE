@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 import PostCard from './PostCard'
+import { Route } from 'react-router-dom'
+import WillBeReplacedByJulieFile from './WillBeReplacedByJulieFile'
 
 export default function JournalEntries(props) {
 	// populates page with initial journal entries upon loading
@@ -23,6 +25,7 @@ export default function JournalEntries(props) {
 					<PostCard title={entry.title} text={entry.text} />
 				)
 			})}
+			<Route path="/home/:id" component={WillBeReplacedByJulieFile} />
 		</div>
 	)
 };
