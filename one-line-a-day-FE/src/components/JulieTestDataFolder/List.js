@@ -21,42 +21,24 @@ const List = (props) => {
             setContent(res.data);
         })
         .catch(e => {
-        console.log('Server error', e)
+        console.log('List error', e)
       });
     };
 
     getPosts();
 }, [API]);
 
-console.log(content)
+//console.log(content)
 
 
     return (
         <div> 
-            <PostNav />
+            {/* <PostNav /> */}
  <div className="fixed">
 <Grid container columns={1} className="card-container">
 <Grid.Column>
-{/* <Post id={content.id} /> */}
 
-    {content.map((item, index) => {
- return (
-     <div>
-    <Link to={`/post/${props.id}`}> 
- <Card className="card-container" key={index}>
-  <Card.Content>
-  <Card.Header><span className="post-title">{item.body}</span></Card.Header>
-  <Card.Meta>
-    <span className='date'>Date created</span>
-  </Card.Meta>
-  <Card.Description>
-    {item.body}
-  </Card.Description>
-</Card.Content>
-</Card>
-</Link>
-</div>
-    )})};
+    {content.map((post, index) => <SelectedPost key={post.id} post={post} />)}
     
 </Grid.Column>
 </Grid>
@@ -69,29 +51,6 @@ console.log(content)
 export default List;
 
 function SelectedPost (props) {
-    return <Post post={props.content} />;
+    return <Post post={props.post} />;
 }
 
-{/* <div className="fixed">
-<Grid container columns={1} className="card-container">
-<Grid.Column>
-    {content.map((item, index) => {
- return (
- <Card className="card-container" key={index}>
-  <Card.Content>
-  <Card.Header><span className="post-title">{item.body}</span></Card.Header>
-  <Card.Meta>
-    <span className='date'>Date created</span>
-  </Card.Meta>
-  <Card.Description>
-    {item.body}
-  </Card.Description>
-</Card.Content>
-</Card>
-
-    )})};
-    
-</Grid.Column>
-</Grid>
-</div>
-</div> */}

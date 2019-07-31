@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import JournalEntries from './components/JournalEntries';
 import Post from './components/Post/Post';
 import List from './components/JulieTestDataFolder/List'
+import SelectedPostCard from './components/JulieTestDataFolder/SelectedPostCard'
 
 function App() {
 	return (
@@ -16,7 +17,7 @@ function App() {
 			<Route exact path="/" render={props => <Login {...props} />} />
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
 			<Route exact path="/list" render={props => <List {...props} />} />
-			<Route exact path="/post/:id" render={props => <Post {...props} />} />
+			<Route exact path="/post/:id" render={props => <SelectedPostCard {...props} />} />
 			<PrivateRoute path="/home" component={JournalEntries} />
     </div>
   );
