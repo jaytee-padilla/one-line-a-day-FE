@@ -11,16 +11,17 @@ import PostList from './components/Post/PostList';
 import SelectedPost from './components/Post/SelectedPost';
 import CreatePost from './components/JulieTestDataFolder/CreatePost';
 
-
 function App() {
 	return (
     <div className="App">
 			<Route exact path="/" render={props => <Login {...props} />} />
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
-			<Route exact path="/postlist" render={props => <PostList {...props} />} />
+			<PrivateRoute exact path="/home" component={JournalEntries} />
+			{/* <Route exact path="/home/:entryId" component={Selected} /> */}
+			{/* <Route exact path="/postlist" render={props => <PostList {...props} />} /> */}
 			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
 			<Route exact path="/createpost" component={CreatePost} />
-			<PrivateRoute path="/home" component={JournalEntries} />
+
     </div>
   );
 }
