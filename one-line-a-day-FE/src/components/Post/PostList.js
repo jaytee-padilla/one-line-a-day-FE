@@ -32,7 +32,6 @@ const PostList = (props) => {
 
     return (
         <div><PostListNav />
-        <CreatePost post={content}/>
         <div>
             {content.map((post, index) => <GeneratePost key={post.id} post={post} />)}
         </div>

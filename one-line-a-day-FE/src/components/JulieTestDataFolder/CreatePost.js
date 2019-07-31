@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, TextArea } from 'semantic-ui-react';
 import styled from 'styled-components';
 import '../../variables.scss'
+import CreatePostNav from '../PostNav/CreatePostNav';
 
 
 export const PostStyle = styled.div`
@@ -11,11 +12,12 @@ padding: 20px;
 `;
 
 
-const CreatePost = ({post}) => {
+const CreatePost = () => {
 
-    const { id } = post;
-
+    
     return (
+        <div>
+        <CreatePostNav />
     <PostStyle>
     <Form>
     <Form.Field>
@@ -25,6 +27,7 @@ const CreatePost = ({post}) => {
     <TextArea placeholder='My daily line...' />
   </Form>
   </PostStyle>
+  </div>
     )
     }
 

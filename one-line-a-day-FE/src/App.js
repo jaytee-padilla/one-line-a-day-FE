@@ -7,9 +7,10 @@ import './App.scss';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import JournalEntries from './components/JournalEntries';
-// import Post from './components/Post/Post';
 import PostList from './components/Post/PostList';
-import SelectedPost from './components/Post/SelectedPost'
+import SelectedPost from './components/Post/SelectedPost';
+import CreatePost from './components/JulieTestDataFolder/CreatePost';
+
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
 			<Route exact path="/postlist" render={props => <PostList {...props} />} />
 			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
+			<Route exact path="/createpost" component={CreatePost} />
 			<PrivateRoute path="/home" component={JournalEntries} />
     </div>
   );
