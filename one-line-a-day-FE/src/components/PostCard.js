@@ -8,15 +8,21 @@ const PostCardDiv = styled.div`
     border-bottom: 2px solid black;
 `;
 
+const Date = styled.h2`
+    font-family: 'Open Sans';
+    color: black;
+`;
 
 
 
-export default function PostCard({ title, text, date }) {
+
+export default function PostCard({ title, date }) {
+
+
     return(
         <PostCardDiv>
-            <h2>{date}</h2>
-            <Link to="/home/:id"><h2>{title}</h2></Link>
-            <p>{text}</p>
+            <Date>{date}</Date>
+            <Link to="/home/:id"><Date>{title}</Date></Link>
         </PostCardDiv>
 
     )

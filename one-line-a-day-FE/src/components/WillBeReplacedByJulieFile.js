@@ -22,6 +22,7 @@ export default function WillBeReplacedByJulieFile(props) {
             {entry.map(ent => {
                 return (
                     <div>
+                        <h2>{ent.created_at}</h2>
                         <h2>{ent.title}</h2>
                         <h2>{ent.text}</h2>
                     </div>
