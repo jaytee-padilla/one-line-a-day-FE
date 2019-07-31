@@ -10,7 +10,6 @@ import JournalEntries from './components/JournalEntries';
 import PostList from './components/Post/PostList';
 import SelectedPost from './components/Post/SelectedPost';
 import CreatePost from './components/JulieTestDataFolder/CreatePost';
-import WillBeReplacedByJulieFile from './components/WillBeReplacedByJulieFile'
 
 function App() {
 	return (
@@ -18,9 +17,9 @@ function App() {
 			<Route exact path="/" render={props => <Login {...props} />} />
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
 			<PrivateRoute exact path="/home" component={JournalEntries} />
-			<Route exact path="/home/:entryId" component={WillBeReplacedByJulieFile} />
-			{/* <Route exact path="/postlist" render={props => <PostList {...props} />} />
-			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} /> */}
+			{/* <Route exact path="/home/:entryId" component={Selected} /> */}
+			{/* <Route exact path="/postlist" render={props => <PostList {...props} />} /> */}
+			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
 			<Route exact path="/createpost" component={CreatePost} />
 
     </div>

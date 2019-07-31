@@ -3,7 +3,8 @@ import axios from 'axios';
 import './Post';
 import PostNav from '../PostNav/PostNav';
 import PostNavList from '../PostNav/PostNav';
-import EditPost from '../JulieTestDataFolder/EditPost'
+import EditPost from '../JulieTestDataFolder/EditPost';
+import { axiosWithAuth } from '../../auth/axiosWithAuth';
 
 import Post from './Post';
 
@@ -17,9 +18,9 @@ const SelectedPost = (props) => {
     useEffect(() => {
         const id = props.match.params.id
 
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        axiosWithAuth().get(`https://one-line-daily.herokuapp.com/api/entries/${id}`)
         .then(res => {
-            setPost(res.data);
+            setPost(res.data.data);
         })
         .catch(e => {
         console.log('SelectedPostError', e)

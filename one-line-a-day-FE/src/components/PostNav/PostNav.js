@@ -12,7 +12,7 @@ const PostNav = ({post}) => {
             </div>
             <div className="navBar">
             <button className="button active" >
-            <Link to="/postlist/"><i className="left chevron icon"></i></Link> 
+            <Link to="/home/"><i className="left chevron icon"></i></Link> 
             </button>
             {/*change to link to tanias edit form */}
             <NavLink to={`/post/${post.id}`}><h3>Edit</h3></NavLink>
