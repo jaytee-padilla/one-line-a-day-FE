@@ -1,5 +1,5 @@
-@import '../src/variables.scss';
-@import '../src/reset.scss';
+@import '../variables.scss';
+@import './reset.scss';
 
 .App {
   text-align: center;
@@ -8,7 +8,7 @@
   height: auto;
   margin: 0 auto;
 
- 
+
   h1 {
     font-family: $font-header;
   }
