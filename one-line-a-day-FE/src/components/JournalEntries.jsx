@@ -21,7 +21,7 @@ export default function JournalEntries(props) {
 	}, []);
 
 	
-
+//test
 	return (
 		<div>
 			<PostListNav />
