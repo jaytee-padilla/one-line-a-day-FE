@@ -17,7 +17,17 @@ import { Card, Grid } from 'semantic-ui-react';
 
 
 
-export default function PostCard({ title, date, entryId, props }) {
+export default function PostCard({ title, date, entryId }) {
+
+        const changedate = date.split("-")
+ 
+        const item3 = changedate[2]
+
+        const item3split = item3.split("T")
+
+        const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`
+    
+
 
 
     return(
@@ -26,7 +36,7 @@ export default function PostCard({ title, date, entryId, props }) {
                 <Grid.Column>
                     <Card className="card-container">
                         <Card.Content>
-                            <Card.Header><div className="date"><Link to={`/home/${entryId}`}>{date}</Link></div></Card.Header>
+                            <Card.Header><div className="date"><Link to={`/home/${entryId}`}>{datedisplay}</Link></div></Card.Header>
                             <Card.Meta>
                                 <div className="post-title">{title}</div>
                             </Card.Meta>
