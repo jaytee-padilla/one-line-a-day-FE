@@ -17,7 +17,7 @@ const EntryForm = (props) => {
         submitEntry(entry);
         setEntry(entry);
         //'setPost' clears form by resetting all associated values when submit is pressed
-        setEntry({ userId: '', id: '', title: '', date: '', entry: '' });
+        setEntry({ id: '', title: '', date: '', entry: '' });
         //navigate back to home
         history.push('/');
     };
