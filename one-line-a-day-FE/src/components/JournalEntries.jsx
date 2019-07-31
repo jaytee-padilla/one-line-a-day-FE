@@ -4,7 +4,8 @@ import { Route } from 'react-router-dom'
 
 // Components
 import PostCard from './PostCard'
-import WillBeReplacedByJulieFile from './WillBeReplacedByJulieFile'
+import PostListNav from './PostNav/PostListNav'
+
 
 export default function JournalEntries(props) {
 	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
@@ -24,12 +25,13 @@ export default function JournalEntries(props) {
 
 	return (
 		<div>
+			<PostListNav />
 			{entries.map(entry => {
 				return (
 					<PostCard props={props} entryId={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
-			<Route exact path="/entry/:entryId" component={WillBeReplacedByJulieFile} />
+			
 		</div>
 	)
 };
