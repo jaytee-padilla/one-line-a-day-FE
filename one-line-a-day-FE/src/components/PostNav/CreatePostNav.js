@@ -11,11 +11,13 @@ const CreatePostNav = () => {
                 <p>One Line a Day</p>
             </div>
             <div className="navBar">
-            <button className="button active" >
-            <Link to="/home/"><i className="left chevron icon"></i></Link> 
-            </button>
+            <div className="back-button" >
+            <Link to="/home/"><h3><i className="left chevron icon" title="back"></i></h3></Link> 
+            </div>
             {/*change to link to SAVE functionality*/}
-            <NavLink to="#"><h3>Save</h3></NavLink>
+            {/* <NavLink to="#"><h3>Save</h3></NavLink> */}
+            <NavLink to="#"><h3><i aria-hidden="true" className="save large icon" title="save"></i></h3></NavLink>
+
             </div>
         </div> 
     )

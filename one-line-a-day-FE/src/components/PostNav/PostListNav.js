@@ -9,7 +9,7 @@ const PostListNav = () => {
                 <p>One Line a Day</p>
             </div>
             <div className="navBar">
-            <NavLink to="/createpost"><h3><i aria-hidden="true" className="plus circle large icon"></i>
+            <NavLink to="/createpost"><h3><i aria-hidden="true" className="plus circle large icon" title="create post"></i>
 
 </h3></NavLink>
             </div>
