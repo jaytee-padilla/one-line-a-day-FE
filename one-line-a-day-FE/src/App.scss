@@ -1,0 +1,15 @@
+@import '../src/variables.scss';
+@import '../src/reset.scss';
+
+.App {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+ 
+  h1 {
+    font-family: $font-header;
+  }
+}
