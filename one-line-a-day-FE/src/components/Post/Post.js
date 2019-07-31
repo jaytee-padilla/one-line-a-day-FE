@@ -6,7 +6,15 @@ import { Link } from 'react-router-dom';
 const Post = ({post}) => {
 
 
-const {id, title, body} = post;
+const {id, title, text, created_at } = post;
+
+    const changedate = created_at.split("-")
+    
+    const item3 = changedate[2]
+
+    const item3split = item3.split("T")
+
+    const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`
 
 
     return (
@@ -20,10 +28,10 @@ const {id, title, body} = post;
                 <Card.Content>
                 <Card.Header><span className="post-title">{title}</span></Card.Header>
                 <Card.Meta>
-                    <span className='date'>{id}</span>
+                    <span className='date'>{datedisplay}</span>
                 </Card.Meta>
                 <Card.Description>
-                    {body}
+                    {text}
                 </Card.Description>
                 </Card.Content>
                 </Card>    

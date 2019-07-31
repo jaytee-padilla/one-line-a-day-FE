@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
-import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom'
 
-// components
-import PostListNav from './PostNav/PostListNav';
-import PostCard from './PostCard';
-import Post from './Post/SelectedPost';
+// Components
+import PostCard from './PostCard'
+import PostListNav from './PostNav/PostListNav'
+
 
 export default function JournalEntries(props) {
-	const loggedInUserId = localStorage.getItem("user_id");
+	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
+	const [entries, setEntries] = useState([]);
 
 	// populates page with initial journal entries upon loading
 	useEffect(() => {
@@ -19,18 +20,17 @@ export default function JournalEntries(props) {
 			.catch(error => console.log(error))
 	}, []);
 
-	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
-	const [entries, setEntries] = useState([]);
+	
 
 	return (
 		<div>
 			<PostListNav />
 			{entries.map(entry => {
 				return (
-					<PostCard key={entry.id} title={entry.title} text={entry.text} entry={entry} />
+					<PostCard props={props} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
-			<Route path="/home/:id" component={Post} />
+			
 		</div>
 	)
 };
