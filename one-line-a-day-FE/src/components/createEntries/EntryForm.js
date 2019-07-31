@@ -26,18 +26,6 @@ const EntryForm = (props) => {
             <form onSubmit={submitHandler}>
                 <fieldset>
                     <legend>Create New Entry</legend>
-                    {/* <div className='idField'>
-                        <label>
-                            Id:
-                            <input
-                                name='id'
-                                type='text'
-                                placeholder='id'
-                                value={post.id}
-                                onChange={changeHandler}
-                            />
-                        </label>
-                    </div> */}
                     <div className='titleField'>
                         <label>
                             Title:
