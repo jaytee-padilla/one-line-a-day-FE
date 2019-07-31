@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 
-export default function WillBeReplacedByJulieFile() {
+
+export default function WillBeReplacedByJulieFile(props) {
     const [entry, setEntry] = useState()
 
     useEffect(() => {
@@ -17,10 +18,13 @@ export default function WillBeReplacedByJulieFile() {
 
     return (
         <div>
+ 
             {entry.map(ent => {
                 return (
-                    <h2>{ent.title}</h2>
-                    <h2>{ent.text}</h2>
+                    <div>
+                        <h2>{ent.title}</h2>
+                        <h2>{ent.text}</h2>
+                    </div>
                 )
             })}
         </div>

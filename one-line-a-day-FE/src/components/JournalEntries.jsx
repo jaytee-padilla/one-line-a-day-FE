@@ -22,7 +22,7 @@ export default function JournalEntries(props) {
 		<div>
 			{entries.map(entry => {
 				return (
-					<PostCard title={entry.title} text={entry.text} />
+					<PostCard date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
 			<Route path="/home/:id" component={WillBeReplacedByJulieFile} />
