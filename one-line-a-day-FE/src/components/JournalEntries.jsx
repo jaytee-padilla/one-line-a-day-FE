@@ -13,9 +13,8 @@ export default function JournalEntries(props) {
 
 	// populates page with initial journal entries upon loading
 	useEffect(() => {
-		axiosWithAuth().get("https://one-line-daily.herokuapp.com/api/entries")
+		axiosWithAuth().get(`https://one-line-daily.herokuapp.com/api/entries/`)
 			.then(response => {
-				console.log(response.data.data);
 				setEntries(response.data.data);
 			})
 			.catch(error => console.log(error))

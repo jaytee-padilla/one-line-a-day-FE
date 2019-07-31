@@ -10,10 +10,7 @@ import Post from './Post';
 
 
 const SelectedPost = (props) => {
-
-
     const [post, setPost] = useState(null);
-
 
     useEffect(() => {
         const id = props.match.params.id
@@ -27,7 +24,7 @@ const SelectedPost = (props) => {
       });
     
 
- 
+
     }, [props.match.params.id]
 );
 console.log(post, 'selectedCard')

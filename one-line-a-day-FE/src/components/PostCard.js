@@ -20,7 +20,7 @@ import { Card, Grid } from 'semantic-ui-react';
 export default function PostCard({ title, date, id }) {
 
         const changedate = date.split("-")
- 
+
         const item3 = changedate[2]
 
         const item3split = item3.split("T")
