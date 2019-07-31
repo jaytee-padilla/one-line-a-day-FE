@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, Button } from 'semantic-ui-react';
 import './postNav.scss';
+import { NavLink, Link } from 'react-router-dom';
 
 
 
@@ -12,12 +12,9 @@ const PostNav = () => {
             </div>
             <div className="navBar">
             <button className="button active" >
-            <i className="left chevron icon"></i>
-                {/* <Link to="/"> /></Link> */}
+            <Link to="/postlist/"><i className="left chevron icon"></i></Link> 
             </button>
-            <h3>Edit</h3>
-                {/* <Link to="/"> /></Link> */}
-                {/* preventDefault, stopPropagation */}
+            <NavLink to="#"><h3>Edit</h3></NavLink>
             </div>
         </div> 
     

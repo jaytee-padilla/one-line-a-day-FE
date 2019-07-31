@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../Post/Post';
-import { Card, Image, Grid, Responsive, Segment } from 'semantic-ui-react';
+import './Post';
 import PostNav from '../PostNav/PostNav';
-import Post from '../Post/Post';
+import Post from './Post';
 
 
-const SelectedPostCard = (props) => {
+const SelectedPost = (props) => {
 
 
     const [post, setPost] = useState(null);
@@ -33,8 +32,12 @@ if (!post) {
     return <div>Loading post information...</div>;
 }
 
-return <Post post={post} />;
-   
+return (
+    <div>
+    <PostNav />
+    <Post post={post} />
+    </div>
+    )
 };
 
-export default SelectedPostCard;
+export default SelectedPost;
