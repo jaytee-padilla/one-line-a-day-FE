@@ -26,7 +26,6 @@ export default function PostCard({ title, date, id }) {
         const item3split = item3.split("T")
 
         const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`
-        console.log("date", date)
     
 
 
@@ -36,12 +35,14 @@ export default function PostCard({ title, date, id }) {
             <Grid columns={1} className="card-container">
                 <Grid.Column>
                     <Card className="card-container">
+											<Link to={`/post/${id}`}>
                         <Card.Content>
-                            <Card.Header><div className="date"><Link to={`/post/${id}`}>{datedisplay}</Link></div></Card.Header>
+                            <Card.Header><div className="date">{datedisplay}</div></Card.Header>
                             <Card.Meta>
                                 <div className="post-title">{title}</div>
                             </Card.Meta>
                         </Card.Content>
+											</Link>
                     </Card>
                 </Grid.Column>
             </Grid>

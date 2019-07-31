@@ -27,7 +27,7 @@ export default function JournalEntries(props) {
 			<PostListNav />
 			{entries.map(entry => {
 				return (
-					<PostCard props={props} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
+					<PostCard props={props} key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
 			

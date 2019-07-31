@@ -27,7 +27,6 @@ const SelectedPost = (props) => {
 
     }, [props.match.params.id]
 );
-console.log(post, 'selectedCard')
 
 if (!post) {
     return <div>Loading post information...</div>;
