@@ -9,7 +9,7 @@ const PostListNav = () => {
                 <p>One Line a Day</p>
             </div>
             <div className="navBar">
-            <NavLink to="#"><h3>Create Post</h3></NavLink>
+            {/* <NavLink to="#"><h3>Create Post</h3></NavLink> */}
             </div>
         </div> 
     

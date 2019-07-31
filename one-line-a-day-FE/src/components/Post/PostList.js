@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PostListNav from '../PostNav/PostListNav';
 import Post from './Post';
+import CreatePost from '../JulieTestDataFolder/CreatePost'
 
 const postAPI = 'https://jsonplaceholder.typicode.com/posts'
 
@@ -31,6 +32,7 @@ const PostList = (props) => {
 
     return (
         <div><PostListNav />
+        <CreatePost post={content}/>
         <div>
             {content.map((post, index) => <GeneratePost key={post.id} post={post} />)}
         </div>

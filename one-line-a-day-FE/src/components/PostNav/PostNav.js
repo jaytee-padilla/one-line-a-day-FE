@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 
 
-const PostNav = () => {
+const PostNav = ({post}) => {
     return ( 
         <div className="nav">
             <div className="slogan">
@@ -14,7 +14,7 @@ const PostNav = () => {
             <button className="button active" >
             <Link to="/postlist/"><i className="left chevron icon"></i></Link> 
             </button>
-            <NavLink to="#"><h3>Edit</h3></NavLink>
+            <NavLink to={`/post/${post.id}`}><h3>Edit</h3></NavLink>
             </div>
         </div> 
     
@@ -22,4 +22,5 @@ const PostNav = () => {
 }
 
 export default PostNav;
+
 

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Post';
 import PostNav from '../PostNav/PostNav';
+import PostNavList from '../PostNav/PostNav';
+import EditPost from '../JulieTestDataFolder/EditPost'
+
 import Post from './Post';
 
 
@@ -34,10 +37,19 @@ if (!post) {
 
 return (
     <div>
-    <PostNav />
+    <PostNav post={post}/>
     <Post post={post} />
+    {/* <div>
+            {<SendToNavList key={post.id} post={post} />}
+    </div> */}
+    {/*past ia function to the nav  <PostNavList post={post} /> */}
     </div>
     )
 };
 
 export default SelectedPost;
+
+// function SendToNavList (props) {
+//     return <PostNavList post={props.post} />;
+// }
+
