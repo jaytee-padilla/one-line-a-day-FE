@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
-import PostCard from './PostCard'
-import { Route } from 'react-router-dom'
-import WillBeReplacedByJulieFile from './WillBeReplacedByJulieFile'
+import { Route } from 'react-router-dom';
+
+// components
+import PostListNav from './PostNav/PostListNav';
+import PostCard from './PostCard';
+import Post from './Post/SelectedPost';
 
 export default function JournalEntries(props) {
+	const loggedInUserId = localStorage.getItem("user_id");
+
 	// populates page with initial journal entries upon loading
 	useEffect(() => {
-		axiosWithAuth().get("https://one-line-daily.herokuapp.com/api/entries")
+		axiosWithAuth().get(`https://one-line-daily.herokuapp.com/api/entries/`)
 			.then(response => {
-				console.log(response.data.data);
 				setEntries(response.data.data);
 			})
 			.catch(error => console.log(error))
@@ -20,12 +24,13 @@ export default function JournalEntries(props) {
 
 	return (
 		<div>
+			<PostListNav />
 			{entries.map(entry => {
 				return (
-					<PostCard title={entry.title} text={entry.text} />
+					<PostCard key={entry.id} title={entry.title} text={entry.text} entry={entry} />
 				)
 			})}
-			<Route path="/home/:id" component={WillBeReplacedByJulieFile} />
+			<Route path="/home/:id" component={Post} />
 		</div>
 	)
 };

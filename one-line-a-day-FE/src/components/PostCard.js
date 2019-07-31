@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const PostCardDiv = styled.div`
     display: flex;
@@ -10,13 +11,14 @@ const PostCardDiv = styled.div`
 
 
 
-export default function PostCard({ title, text }) {
+export default function PostCard({ title, text, entry }) {
     return(
+			<Link to={`/${entry.id}`}>
         <PostCardDiv>
             <h2>{title}</h2>
             <p>{text}</p>
         </PostCardDiv>
-
+			</Link>
     )
 
 }

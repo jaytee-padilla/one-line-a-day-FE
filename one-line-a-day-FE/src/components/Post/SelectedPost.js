@@ -9,15 +9,12 @@ import Post from './Post';
 
 
 const SelectedPost = (props) => {
-
-
     const [post, setPost] = useState(null);
-
 
     useEffect(() => {
         const id = props.match.params.id
 
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        axios.get(`https://one-line-daily.herokuapp.com/api/entries/${id}`)
         .then(res => {
             setPost(res.data);
         })
@@ -26,7 +23,7 @@ const SelectedPost = (props) => {
       });
     
 
- 
+
     }, [props.match.params.id]
 );
 console.log(post, 'selectedCard')

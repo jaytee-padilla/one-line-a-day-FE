@@ -28,6 +28,7 @@ function EditForm(props) {
     />
   );
 }
+
 function CreateEntry() {
   const [entries, setEntries] = useState([
     // { userId: 1234, id: 0, title: 'Day One', date: 'July 29, 2019' },
