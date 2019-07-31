@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
-import PostCard from './PostCard'
 import { Route } from 'react-router-dom'
+
+// Components
+import PostCard from './PostCard'
 import WillBeReplacedByJulieFile from './WillBeReplacedByJulieFile'
 
 export default function JournalEntries(props) {
+	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
+	const [entries, setEntries] = useState([]);
+
 	// populates page with initial journal entries upon loading
 	useEffect(() => {
 		axiosWithAuth().get("https://one-line-daily.herokuapp.com/api/entries")
@@ -15,17 +20,16 @@ export default function JournalEntries(props) {
 			.catch(error => console.log(error))
 	}, []);
 
-	// component state that will house the journal entries coming in from the backend so they can be mapped and rendered
-	const [entries, setEntries] = useState([]);
+	
 
 	return (
 		<div>
 			{entries.map(entry => {
 				return (
-					<PostCard date={entry.created_at} title={entry.title} text={entry.text} />
+					<PostCard props={props} entryId={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
-			<Route path="/home/:id" component={WillBeReplacedByJulieFile} />
+			<Route exact path="/entry/:entryId" component={WillBeReplacedByJulieFile} />
 		</div>
 	)
 };

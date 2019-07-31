@@ -16,13 +16,13 @@ const Date = styled.h2`
 
 
 
-export default function PostCard({ title, date }) {
+export default function PostCard({ title, date, entryId, props }) {
 
 
     return(
         <PostCardDiv>
             <Date>{date}</Date>
-            <Link to="/home/:id"><Date>{title}</Date></Link>
+            <Date><Link to={`/entry/${entryId}`}>{title}</Link></Date>
         </PostCardDiv>
 
     )

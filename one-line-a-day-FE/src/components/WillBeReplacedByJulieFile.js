@@ -3,10 +3,10 @@ import { axiosWithAuth } from '../auth/axiosWithAuth';
 
 
 export default function WillBeReplacedByJulieFile(props) {
-    const [entry, setEntry] = useState()
+    const [entry, setEntry] = useState("")
 
     useEffect(() => {
-        const id = props.match.params.id
+        const id = props.match.params.entryId
 
         axiosWithAuth()
             .get(`https://one-line-daily.herokuapp.com/api/entries/${id}`)
@@ -18,16 +18,8 @@ export default function WillBeReplacedByJulieFile(props) {
 
     return (
         <div>
- 
-            {entry.map(ent => {
-                return (
-                    <div>
-                        <h2>{ent.created_at}</h2>
-                        <h2>{ent.title}</h2>
-                        <h2>{ent.text}</h2>
-                    </div>
-                )
-            })}
+            <h1>{entry.title}</h1>
+            <h1>{entry.created_at}</h1>
         </div>
     )
 }
