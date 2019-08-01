@@ -1,5 +1,14 @@
 @import '../variables.scss';
 
-.post-title {
-	font-family: $font-content;
+.post-card {
+	.date {
+		font-size: 1.8em;
+		line-height: 1em;
+		margin-bottom: 20px;
+	}
+
+	.post-title {
+		font-size: 1.2em;
+		font-family: $font-content;
+	}
 }

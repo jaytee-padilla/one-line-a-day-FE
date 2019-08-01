@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
+import Loader from 'react-loader-spinner';
 
 // Components
 import PostCard from './PostCard';
@@ -33,15 +34,17 @@ export default function JournalEntries(props) {
 				<PostListNav props={props} />
 			</div>
 
-			<div style={{width: "75%", margin: "0 auto"}}>
-				{!entries ? <h1>You don't have any journal entries yet</h1> :
-					entries.map(entry => {
-						return (
-							<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
-						)
-					})
-				}
-			</div>
+			{!entries ? <div><Loader type="Oval" color="grey" height={80} width={80} /></div> : 
+				<div style={{width: "75%", margin: "0 auto"}}>
+					{!entries ? <h1>You don't have any journal entries yet</h1> :
+						entries.map(entry => {
+							return (
+								<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
+							)
+						})
+					}
+				</div>
+			}
 		</React.Fragment>
 	)
 };
