@@ -21,8 +21,8 @@ const {id, title, text, created_at } = post;
         <Container text>
             
             <Link to={`/post/${post.id}`}>       
-            <div className="fixed">
-                <Grid container columns={1} className="card-container">
+            <div className="post-container">
+                <Grid container columns={1}>
                 <Grid.Column>
                 <Card className="card-container">
                 <Card.Content>
