@@ -18,6 +18,7 @@ export default function JournalEntries(props) {
 		axiosWithAuth().get(`https://one-line-daily.herokuapp.com/api/entries/user/${loginId}`)
 			.then(response => {
 				setEntries(response.data.data);
+				console.log(response.data.data)
 			})
 			.catch(error => console.log(error))
 	}, []);
