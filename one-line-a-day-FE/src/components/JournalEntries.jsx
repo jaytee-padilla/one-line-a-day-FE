@@ -17,8 +17,12 @@ export default function JournalEntries(props) {
 	useEffect(() => {
 		axiosWithAuth().get(`https://one-line-daily.herokuapp.com/api/entries/user/${loginId}`)
 			.then(response => {
-				setEntries(response.data.data);
-				console.log(response.data.data)
+				// the sort() method organizes the journal entries so the newest entries show up first
+				// .sort() mutates whatever array it's sorting, so the [...] spread operator is used to create a new instance of the array to be sorted and modified instead
+				// that new sorted/modified instance is then stored in unorderedEntries and used to setEntries
+				const unorderedEntries = [...response.data.data].sort((a, b) => (a.id < b.id) ? 1 : -1);
+
+				setEntries(unorderedEntries);
 			})
 			.catch(error => console.log(error))
 	}, []);
@@ -31,8 +35,7 @@ export default function JournalEntries(props) {
 
 			<div style={{width: "75%", margin: "0 auto"}}>
 				{!entries ? <h1>You don't have any journal entries yet</h1> :
-					// map over entries array in reverse order so the most recent journal entry is displayed first
-					[...entries].reverse().map(entry => {
+					entries.map(entry => {
 						return (
 							<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 						)
