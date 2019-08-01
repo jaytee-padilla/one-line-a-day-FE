@@ -20,11 +20,9 @@ export default function JournalEntries(props) {
 			.catch(error => console.log(error))
 	}, []);
 
-	
-
 	return (
 		<div>
-			<PostListNav />
+			<PostListNav props={props} />
 			{entries.map(entry => {
 				return (
 					<PostCard props={props} key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />

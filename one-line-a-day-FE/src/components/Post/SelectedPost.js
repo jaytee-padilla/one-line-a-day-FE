@@ -25,8 +25,7 @@ const SelectedPost = (props) => {
     
 
 
-    }, [props.match.params.id]
-);
+    }, [props.match.params.id]);
 
 if (!post) {
     return <div>Loading post information...</div>;
@@ -34,12 +33,12 @@ if (!post) {
 
 return (
     <div>
-    <PostNav post={post}/>
-    <Post post={post} />
-    {/* <div>
-            {<SendToNavList key={post.id} post={post} />}
-    </div> */}
-    {/*past ia function to the nav  <PostNavList post={post} /> */}
+			<PostNav post={post}/>
+			<Post post={post} />
+			{/* <div>
+							{<SendToNavList key={post.id} post={post} />}
+			</div> */}
+			{/*past ia function to the nav  <PostNavList post={post} /> */}
     </div>
     )
 };
