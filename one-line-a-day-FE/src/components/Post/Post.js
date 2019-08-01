@@ -1,6 +1,6 @@
 import React from 'react';
 import './post.scss';
-import { Card, Grid } from 'semantic-ui-react';
+import { Card, Grid, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Post = ({post}) => {
@@ -18,7 +18,7 @@ const {id, title, text, created_at } = post;
 
 
     return (
-        <div>
+        <Container text>
             
             <Link to={`/post/${post.id}`}>       
             <div className="fixed">
@@ -40,7 +40,7 @@ const {id, title, text, created_at } = post;
             </div>
 
             </Link>
-        </div>
+        </Container>
     )
 };
 
