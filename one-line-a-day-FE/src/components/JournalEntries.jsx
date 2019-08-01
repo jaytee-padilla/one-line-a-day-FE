@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
-import { Route } from 'react-router-dom'
 
 // Components
-import PostCard from './PostCard'
-import PostListNav from './PostNav/PostListNav'
+import PostCard from './PostCard';
+import PostListNav from './PostNav/PostListNav';
 
 
 export default function JournalEntries(props) {
@@ -23,12 +22,13 @@ export default function JournalEntries(props) {
 	return (
 		<div>
 			<PostListNav props={props} />
-			{entries.map(entry => {
+
+			{/* map over entries array in reverse order so the most recent journal entry is displayed first */}
+			{[...entries].reverse().map(entry => {
 				return (
-					<PostCard props={props} key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
+					<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
 				)
 			})}
-			
 		</div>
 	)
 };

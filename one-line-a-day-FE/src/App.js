@@ -8,7 +8,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import JournalEntries from './components/JournalEntries';
 import SelectedPost from './components/Post/SelectedPost';
-import CreatePost from './components/JulieTestDataFolder/CreatePost';
+import CreateEntry from './components/createEntry/CreateEntry';
 
 function App() {
 	return (
@@ -17,7 +17,7 @@ function App() {
 			<Route exact path="/signup" render={props => <SignUp {...props} />} />
 			<PrivateRoute exact path="/home" component={JournalEntries} />
 			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
-			<Route exact path="/createpost" component={CreatePost} />
+			<Route exact path="/createpost" component={CreateEntry} />
 
     </div>
   );

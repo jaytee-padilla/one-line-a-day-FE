@@ -1,7 +1,7 @@
 import React from 'react';
-import './postListNav.scss';
 import { NavLink, Redirect } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
+import './postListNav.scss';
 
 const PostListNav = ({props}) => {
 	const logout = event => {

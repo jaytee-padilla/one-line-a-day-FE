@@ -3,8 +3,9 @@ import { Route, Link } from 'react-router-dom';
 import Card from './Card';
 import EntryForm from './EntryForm';
 import api from './services/api/';
+import './CreateEntry.scss';
 
- function EditForm(props) {
+function EditForm(props) {
   //destructured: getting editPost out of our props object
   const { editEntry, match, buttonText } = props;
   const id = match.params.id;
@@ -27,11 +28,33 @@ import api from './services/api/';
     />
   );
 }
- const [entries, setEntries] = useState([
+
+function CreateEntry() {
+  const [entries, setEntries] = useState([
     // { userId: 1234, id: 0, title: 'Day One', date: 'July 29, 2019' },
     // { userId: 1234, id: 1, title: 'Day Two', date: 'July 30, 2019' },
   ]);
- //editEntry fxn
+  const [error, setError] = useState('');
+  useEffect(() => {
+    api.getEntries()
+      .then(res => {
+        //console.log(res);
+        setEntries(res.data);
+      })
+      .catch(error => {
+        console.log('error occurred', error);
+      })
+  }, [error]);
+  //addEntry fxn
+  const addEntry = entry => {
+    //send post to the api URL every time we submit a post on our form and add the post object to it
+    api.addEntry(entry)
+      .then(res => {
+        // console.log(res)
+        setEntries([...entries, res.data]);
+      });
+  };
+  //editEntry fxn
   const editEntry = editedEntry => {
     api.editEntry(editedEntry.id, editedEntry)
       .then(res => {
@@ -44,7 +67,8 @@ import api from './services/api/';
         setEntries(entriesCopy);
       });
   };
-return (
+
+  return (
     <div className="CreateEntry">
       <div className="Header">
         <h1>One Line a Day</h1>
@@ -66,7 +90,7 @@ return (
               buttonText='Add Entry'
             />} />
           <Route exact path='/' render={props => entries.map(entry => <Card entry={entry} />)} />
- {/* edit entry route */}
+          {/* edit entry route */}
           <Route path='/edit/:id'
             render={props => <EditForm {...props}
               editEntry={editEntry}
@@ -74,3 +98,12 @@ return (
               buttonText='Edit Entry'
             />}
           />
+        </div>
+      </div >
+    </div>
+  );
+}
+
+export default CreateEntry;
+
+
