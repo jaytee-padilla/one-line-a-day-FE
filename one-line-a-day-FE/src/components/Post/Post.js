@@ -28,7 +28,7 @@ const Post = ({ post }) => {
 									<span className="date">{datedisplay}</span>
 								</Card.Meta>
 
-								<Card.Description>{text}</Card.Description>
+								<Card.Description className="text">{text}</Card.Description>
 							</Card.Content>
 						</Card>
 					</Grid.Column>
