@@ -29,12 +29,14 @@ export default function JournalEntries(props) {
 			</div>
 
 			<div style={{width: "75%", margin: "0 auto"}}>
-				{/* map over entries array in reverse order so the most recent journal entry is displayed first */}
-				{[...entries].reverse().map(entry => {
-					return (
-						<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
-					)
-				})}
+				{!entries ? <h1>You don't have any journal entries yet</h1> :
+					// map over entries array in reverse order so the most recent journal entry is displayed first
+					[...entries].reverse().map(entry => {
+						return (
+							<PostCard key={entry.id} id={entry.id} date={entry.created_at} title={entry.title} text={entry.text} />
+						)
+					})
+				}
 			</div>
 		</React.Fragment>
 	)

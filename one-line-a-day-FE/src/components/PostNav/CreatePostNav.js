@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../../auth/axiosWithAuth';
-import { Button, Icon } from 'semantic-ui-react';
 import './postNav.scss';
 
 const CreatePostNav = props => {
@@ -24,13 +23,14 @@ const CreatePostNav = props => {
             </div>
 
             <div className="navBar">
-            <div className="back-button" >
-							<Link to="/home/">
-								<h3>
-									<i className="left chevron icon" title="back" />
-								</h3>
-							</Link>
-            </div>
+							<div className="back-button" >
+								<Link to="/home/">
+									<h3>
+										<i className="left chevron icon" title="back" />
+									</h3>
+								</Link>
+							</div>
+
 							<h3 onClick={submitHandler} style={{cursor: "pointer"}}>
 								<i aria-hidden="true" className="save large icon" title="save"></i>
 							</h3>

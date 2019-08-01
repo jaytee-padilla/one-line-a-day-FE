@@ -1,7 +1,6 @@
 import React from 'react';
 import './post.scss';
 import { Card, Grid, Container, Image } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 const Post = ({post}) => {
 		const {id, title, text, created_at } = post;

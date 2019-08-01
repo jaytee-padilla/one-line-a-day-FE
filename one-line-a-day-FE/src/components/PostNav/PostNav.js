@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 
 
-const PostNav = ({post}) => {
+const PostNav = post => {
     return ( 
         <div className="nav">
             <div className="slogan">
@@ -20,7 +20,11 @@ const PostNav = ({post}) => {
 								</Link>
 							</div>
 
-							<NavLink to={`/post/${post.id}`}>
+							{/* NavLink passes all the props in the post parameter to the component that's being routed */}
+							<NavLink to={{
+								pathname: `/editpost`,
+								state: {post}
+							}}>
 								<h3>
 									<i aria-hidden="true" className="edit large icon" title="edit" />
 								</h3>
@@ -31,5 +35,3 @@ const PostNav = ({post}) => {
 }
 
 export default PostNav;
-
-
