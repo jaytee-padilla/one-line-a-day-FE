@@ -17,7 +17,6 @@ const PostNav = ({post}) => {
             {/*change to link to tanias edit form */}
             {/* <NavLink to={`/post/${post.id}`}><h3>Edit</h3></NavLink> */}
             <NavLink to={`/post/${post.id}`}><h3><i aria-hidden="true" className="edit large icon" title="edit"></i></h3></NavLink>
-
             </div>
         </div> 
     

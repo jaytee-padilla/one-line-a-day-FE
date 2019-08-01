@@ -4,17 +4,13 @@ import { Card, Grid, Container, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Post = ({post}) => {
+		const {id, title, text, created_at } = post;
 
-
-const {id, title, text, created_at } = post;
-
-    const changedate = created_at.split("-")
-    
-    const item3 = changedate[2]
-
-    const item3split = item3.split("T")
-
-    const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`
+		// formats the date
+    const changedate = created_at.split("-");
+    const item3 = changedate[2];
+    const item3split = item3.split("T");
+    const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`;
 
 
     return (
