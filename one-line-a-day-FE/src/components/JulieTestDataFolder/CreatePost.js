@@ -13,22 +13,20 @@ padding: 20px;
 
 
 const CreatePost = () => {
-
-    
-    return (
-        <div>
-        <CreatePostNav />
-    <PostStyle>
-    <Form>
-    <Form.Field>
-      <label>Create Post</label>
-      <input />
-    </Form.Field>
-    <TextArea placeholder='My daily line...' />
-  </Form>
-  </PostStyle>
+	return (
+	<div>
+		<CreatePostNav />
+		<PostStyle>
+			<Form>
+				<Form.Field>
+					<label>Create Post</label>
+					<input />
+				</Form.Field>
+				<TextArea placeholder='My daily line...' />
+			</Form>
+		</PostStyle>
   </div>
-    )
-    }
+	)
+}
 
 export default CreatePost;

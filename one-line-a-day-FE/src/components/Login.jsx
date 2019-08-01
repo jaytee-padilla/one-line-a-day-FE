@@ -5,11 +5,14 @@ import axios from 'axios';
 import logo from '../assets/OLAD_logo.png';
 
 export default function Login(props) {
+	// loginCreds will store the email & password inputted by the user and is sent to the backend for verification
 	const [loginCreds, setCreds] = useState({
 		email: "",
 		password: ""
 	});
 
+	// sends loginCreds to the backend for verification
+	// if verification is successful (i.e. the email/password combo exists on backend), set the authorization token and user's id to local storage
 	const submitHandler = event => {
 		event.preventDefault();
 
