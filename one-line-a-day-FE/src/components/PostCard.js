@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Grid } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
+import '../styles/postCard.scss';
 
 export default function PostCard({ title, date, id }) {
         // formats the date
