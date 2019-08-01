@@ -10,33 +10,34 @@ const Post = ({post}) => {
     const changedate = created_at.split("-");
     const item3 = changedate[2];
     const item3split = item3.split("T");
-    const datedisplay =  `${changedate[1]} ${item3split[0]}, ${changedate[0]}`;
+    const datedisplay =  `${changedate[1]}, ${item3split[0]}, ${changedate[0]}`;
 
 
     return (
         <Container text>
-            
-            <Link to={`/post/${post.id}`}>       
             <div className="post-container">
                 <Grid container columns={1}>
-                <Grid.Column>
-                <Card className="card-container">
-                <Card.Content>
-                <Image src={require('../../assets/quill-drawing-a-line.svg')} size="small" />
-                <Card.Header><span className="post-title">{title}</span></Card.Header>
-                <Card.Meta>
-                    <span className='date'>{datedisplay}</span>
-                </Card.Meta>
-                <Card.Description>
-                    {text}
-                </Card.Description>
-                </Card.Content>
-                </Card>    
-                </Grid.Column>
+									<Grid.Column>
+										<Card className="card-container">
+											<Card.Content>
+												<Image src={require('../../assets/quill-drawing-a-line.svg')} size="small" />
+
+												<Card.Header>
+													<span className="post-title">{title}</span>
+												</Card.Header>
+
+												<Card.Meta>
+														<span className='date'>{datedisplay}</span>
+												</Card.Meta>
+
+												<Card.Description>
+														{text}
+												</Card.Description>
+											</Card.Content>
+										</Card>    
+									</Grid.Column>
                 </Grid>
             </div>
-
-            </Link>
         </Container>
     )
 };

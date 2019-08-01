@@ -25,11 +25,15 @@ const CreatePostNav = props => {
 
             <div className="navBar">
             <div className="back-button" >
-            <Link to="/home/"><h3><i className="left chevron icon" title="back"></i></h3></Link> 
+							<Link to="/home/">
+								<h3>
+									<i className="left chevron icon" title="back" />
+								</h3>
+							</Link>
             </div>
-            {/*change to link to SAVE functionality*/}
-            {/* <NavLink to="#"><h3>Save</h3></NavLink> */}
-            <Button basic size="tiny" color="blue" onClick={submitHandler}><h3><i aria-hidden="true" className="save large icon" title="save"></i></h3></Button>
+							<h3 onClick={submitHandler} style={{cursor: "pointer"}}>
+								<i aria-hidden="true" className="save large icon" title="save"></i>
+							</h3>
             </div>
         </div> 
     )

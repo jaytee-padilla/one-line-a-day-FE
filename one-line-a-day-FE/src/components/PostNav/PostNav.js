@@ -10,16 +10,23 @@ const PostNav = ({post}) => {
             <div className="slogan">
                 <p>One Line a Day</p>
             </div>
+
             <div className="navBar">
-            <div className="back-button" >
-            <Link to="/home/"><h3><i className="chevron left icon" title="back"></i></h3></Link> 
-            </div>
-            {/*change to link to tanias edit form */}
-            {/* <NavLink to={`/post/${post.id}`}><h3>Edit</h3></NavLink> */}
-            <NavLink to={`/post/${post.id}`}><h3><i aria-hidden="true" className="edit large icon" title="edit"></i></h3></NavLink>
+							<div className="back-button" >
+								<Link to="/home/">
+									<h3>
+										<i className="chevron left icon" title="back" />
+									</h3>
+								</Link>
+							</div>
+
+							<NavLink to={`/post/${post.id}`}>
+								<h3>
+									<i aria-hidden="true" className="edit large icon" title="edit" />
+								</h3>
+							</NavLink>
             </div>
         </div> 
-    
     )
 }
 
