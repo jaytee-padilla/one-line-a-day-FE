@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Image, Grid, Segment } from 'semantic-ui-react';
+import { Form, Image, Grid, Segment, Message } from 'semantic-ui-react';
 import axios from 'axios';
 import logo from '../assets/OLAD_logo.png';
 
@@ -12,16 +12,24 @@ export default function SignUp(props) {
     password: ""
 	});
 
+	// will cause error message to appear if true
+	const [incorrectCreds, setIncorrectCreds] = useState({
+		isIncorrect: false
+	});
+
 	const submitHandler = event =>{
 		event.preventDefault();
 
 		axios.post("https://one-line-daily.herokuapp.com/api/auth/register", userCredentials)
 			.then(response => {
 				console.log(response);
+				setIncorrectCreds({isIncorrect: false});
+
 				props.history.push("/");
 			})
 			.catch(error =>{
 				console.log(error);
+				setIncorrectCreds({isIncorrect: true});
 			})
 	}
 
@@ -34,6 +42,9 @@ export default function SignUp(props) {
 			<Grid textAlign="center" verticalAlign="middle" style={{height: "100vh"}}>
 				<Grid.Column style={{maxWidth: 500}}>
 					<Image centered src={logo} alt="Logo" style={{width: "300px"}} />
+
+					{/* reveals error message if email or password is incorrect */}
+					{incorrectCreds.isIncorrect && <Message error header="Please provide proper account details" />}
 
 					<Form onSubmit={submitHandler}>
 						<Segment>

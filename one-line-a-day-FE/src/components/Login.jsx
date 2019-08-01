@@ -11,10 +11,10 @@ export default function Login(props) {
 		password: ""
 	});
 
-	// will cause error message to appear
+	// will cause error message to appear if true
 	const [incorrectCreds, setIncorrectCreds] = useState({
 		isIncorrect: false
-	})
+	});
 
 	// sends loginCreds to the backend for verification
 	// if verification is successful (i.e. the email/password combo exists on backend), set the authorization token and user's id to local storage
