@@ -27,7 +27,7 @@
        justify-content: space-between;
 			 align-items: center;
 
-       button {
+       .back-button {
         color:$grey;
         font-size: 1.5em;
         font-weight: bold;
@@ -36,7 +36,8 @@
 
     h3 {
         font-size: $font-size-edit;
-        color: teal;
+        // color: teal;
+        color: $grey;
         padding: 0 20px;
     }
        

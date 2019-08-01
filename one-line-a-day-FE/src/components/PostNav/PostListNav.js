@@ -16,8 +16,8 @@ const PostListNav = ({props}) => {
                 <p>One Line a Day</p>
             </div>
             <div className="navBar">
-							<Button className="logout-button" onClick={logout}>Logout</Button>
-							<NavLink to="/createpost"><h3>+</h3></NavLink>
+            <Button className="logout-button" onClick={logout}>Logout</Button>
+            <NavLink to="/createpost"><h3><i aria-hidden="true" className="plus circle large icon" title="create post"></i></h3></NavLink>
             </div>
         </div> 
     
