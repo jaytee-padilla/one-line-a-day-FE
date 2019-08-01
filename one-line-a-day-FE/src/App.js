@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import JournalEntries from './components/JournalEntries';
 import SelectedPost from './components/Post/SelectedPost';
 import CreateEntry from './components/createEntry/CreateEntry';
+import EditEntry from './components/editEntry/EditEntry';
 
 function App() {
 	return (
@@ -18,7 +19,7 @@ function App() {
 			<PrivateRoute exact path="/home" component={JournalEntries} />
 			<Route exact path="/post/:id" render={props => <SelectedPost {...props} />} />
 			<Route exact path="/createpost" component={CreateEntry} />
-
+			<Route exact path="/editpost" render={props => <EditEntry {...props} />} />
     </div>
   );
 }

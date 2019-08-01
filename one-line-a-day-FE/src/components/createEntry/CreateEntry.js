@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { axiosWithAuth } from '../../auth/axiosWithAuth';
 import { Form, TextArea } from 'semantic-ui-react';
 import styled from 'styled-components';
 
