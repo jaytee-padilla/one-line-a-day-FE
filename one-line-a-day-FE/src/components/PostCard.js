@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Grid, Container } from 'semantic-ui-react';
+import '../styles/postCard.scss';
 
 export default function PostCard ({ title, date, id }) {
 	// formats the date
@@ -45,7 +46,7 @@ export default function PostCard ({ title, date, id }) {
 		<Container text>
 			<div className="post-card">
 				<Link to={`/post/${id}`}>
-					<Card raised fluid className="card-container" style={{ padding: '50px 0', marginBottom: '25px' }}>
+					<Card raised fluid className="card-container" style={{ padding: '30px 0', marginBottom: '25px' }}>
 						<Card.Content>
 							<Card.Header>
 								<div className="date">{datedisplay}</div>
