@@ -20,3 +20,6 @@ The backend is hosted on Heroku and the documentation for it can be found [here]
 
 ### Product Canvas:
 More details about this application can be found [here](https://docs.google.com/document/d/1mFvWEOCd_6gqtvXvuhoplttwhID9spLfAroH7XvNO4w/edit?usp=sharing).
+
+### App
+The deployed version of the app can be found [here](https://one-line-a-day-app.netlify.app/)
