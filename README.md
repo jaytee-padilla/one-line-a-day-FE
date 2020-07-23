@@ -18,8 +18,19 @@ The One Line A Day application was built from the ground up by a team of aspirin
 ### Backend API Documentation
 The backend is hosted on Heroku and the documentation for it can be found [here](https://github.com/build-one-line-a-day/Backend---Oyekunle-Oloyede).
 
-### Product Canvas:
+### Product Canvas
 More details about this application can be found [here](https://docs.google.com/document/d/1mFvWEOCd_6gqtvXvuhoplttwhID9spLfAroH7XvNO4w/edit?usp=sharing).
 
 ### App
 The deployed version of the app can be found [here](https://one-line-a-day-app.netlify.app/)
+
+### Technology Used:
+- HTML  
+- CSS  
+- Javascript 
+- React  
+- Redux  
+- Axios  
+- Semantic UI  
+- Styled Components  
+- Sass  
