@@ -25,9 +25,6 @@ More details about this application can be found [here](https://docs.google.com/
 The deployed version of the app can be found [here](https://one-line-a-day-app.netlify.app/)
 
 ### Technology Used:
-- HTML  
-- CSS  
-- Javascript 
 - React  
 - Redux  
 - Axios  
