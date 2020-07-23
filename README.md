@@ -27,6 +27,7 @@ The deployed version of the app can be found [here](https://one-line-a-day-app.n
 ### Technology Used:
 - React  
 - Redux  
+- React Router  
 - Axios  
 - Semantic UI  
 - Styled Components  
