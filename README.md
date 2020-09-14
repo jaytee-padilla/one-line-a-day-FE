@@ -6,7 +6,7 @@ The One Line a Day platform provides an insightful snapshot of your thoughts, me
 Users can log in and start making entries in their journal. They can create, review, update, and delete data. The app functions as a journal and you can see all entries each day.
 
 ### Team
-The One Line A Day application was built from the ground up by a team of aspiring software engineers over the course of 4 days:  
+The One Line A Day application was built from the ground up by a team of software engineers over the course of 4 days:  
 [Oyekunle Oloyede](https://github.com/Oyekunle-Mark) - Backend  
 [Jaytee Padilla](https://github.com/jaytee-padilla) - Frontend Architect  
 [Tania Keller](https://github.com/taniamichelle) - Frontend Developer  
