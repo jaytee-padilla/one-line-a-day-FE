@@ -30,4 +30,4 @@ The deployed version of the app can be found [here](https://one-line-a-day-app.n
 - Axios  
 - Semantic UI  
 - Styled Components  
-- Sass  
+- SCSS 
